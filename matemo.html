@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Matemo Data Converter</title>
+</head>
+<body>
+<div id="app">
+  <div>
+    Select a Matemo.bin file:
+    <input type="file" @change="select"/>
+  </div>
+  <p v-if="message !== 0">{{locale.message(message)}}</p>
+  <div v-else>
+    <p>Save data as: <a href="javascript:;" @click="saveTxt()">TXT</a>, <a href="javascript:;" @click="saveJson()">JSON</a>, <a href="javascript:;" @click="saveCsv()">CSV</a>, <a href="javascript:;" @click="saveExcelCsv()">Excel CSV (Comma)</a>, <a href="javascript:;" @click="saveExcelCsv2()">Excel CSV (Semicolon)</a></p>
+    <pre><code>{{txt}}</code></pre>
+  </div>
+</div>
+<script src="vue.global.prod.js"></script>
+<script src="matemo.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
