@@ -16,11 +16,14 @@ h1 img {
   height: 2em;
   vertical-align: bottom;
 }
+.hidden {
+  display: none;
+}
 </style>
 </head>
 <body>
 <h1><img src="kum-logo.svg" alt="KUM Logo"/> Matemo Data Converter</h1>
-<div id="app">
+<div id="app" class="hidden">
   <div>
     Select a Matemo.bin file:
     <input type="file" @change="select"/>
@@ -34,5 +37,8 @@ h1 img {
 <script src="vue.global.prod.js"></script>
 <script src="matemo.js"></script>
 <script src="main.js"></script>
+<script>
+document.getElementById('app').classList.remove('hidden')
+</script>
 </body>
 </html>
